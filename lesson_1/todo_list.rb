@@ -37,29 +37,6 @@ class Todo
   end
 end
 
-todo1 = Todo.new("Buy milk")
-todo2 = Todo.new("Clean room")
-todo3 = Todo.new("Go to gym")
-
-puts todo1
-puts todo2
-puts todo3
-
-# [ ] Buy milk
-# [ ] Clean room
-# [ ] Go to gym
-
-todo1.done!
-
-puts todo1
-puts todo2
-puts todo3
-
-# [X] Buy milk
-# [ ] Clean room
-# [ ] Go to gym
-
-
 # This class represents a collection of Todo objects.
 # You can perform typical collection-oriented actions
 # on a TodoList object, including iteration and selection.
@@ -72,7 +49,18 @@ class TodoList
     @todos = []
   end
 
-  # rest of class needs implementation
+  def add(todo)
+    if todo.is_a? Todo
+      todos << todo 
+    else
+      raise TypeError, "can only add Todo objects"
+    end
+
+    self
+  end
+
+  private
+  attr_reader :todos
 
 end
 
