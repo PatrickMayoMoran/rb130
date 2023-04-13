@@ -16,4 +16,13 @@
 #   return given number
 
 def times(n)
+  counter = 0
+  while counter < n
+    yield(counter)
+    counter += 1
+  end
 end
+
+# times(3) --> LocalJumpError
+times(3) { puts "times test!" } # works!
+times(5) { |n| puts "Time now is #{n}" } # works!
