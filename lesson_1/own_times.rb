@@ -21,8 +21,10 @@ def times(n)
     yield(counter)
     counter += 1
   end
+
+  n
 end
 
 # times(3) --> LocalJumpError
 times(3) { puts "times test!" } # works!
-times(5) { |n| puts "Time now is #{n}" } # works!
+p times(5) { |n| puts "Time now is #{n}" } # works!
