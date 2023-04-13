@@ -59,6 +59,30 @@ class TodoList
     self
   end
 
+  def size
+    todos.size
+  end
+
+  def first
+    todos.first
+  end
+
+  def last
+    todos.last
+  end
+
+  def to_a
+    todos
+  end
+
+  def done?
+    todos.all? { |todo| todo.done? }
+  end
+
+  def item_at(idx)
+    todos.fetch(idx)
+  end
+
   private
   attr_reader :todos
   alias << add
@@ -86,26 +110,26 @@ list.add(todo3)                 # adds todo3 to end of list, returns list
 # ---- Interrogating the list -----
 
 # size
-list.size                       # returns 3
+p list.size                       # returns 3
 
 # first
-list.first                      # returns todo1, which is the first item in the list
+puts list.first                      # returns todo1, which is the first item in the list
 
 # last
-list.last                       # returns todo3, which is the last item in the list
+puts list.last                       # returns todo3, which is the last item in the list
 
 #to_a
-list.to_a                      # returns an array of all items in the list
+p list.to_a                      # returns an array of all items in the list
 
 #done?
-list.done?                     # returns true if all todos in the list are done, otherwise false
+p list.done?                     # returns true if all todos in the list are done, otherwise false
 
 # ---- Retrieving an item in the list ----
 
 # item_at
-list.item_at                    # raises ArgumentError
-list.item_at(1)                 # returns 2nd item in list (zero based index)
-list.item_at(100)               # raises IndexError
+# list.item_at                    # raises ArgumentError
+puts list.item_at(1)                 # returns 2nd item in list (zero based index)
+puts list.item_at(100)               # raises IndexError
 
 # ---- Marking items in the list -----
 
