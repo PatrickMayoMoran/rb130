@@ -87,6 +87,10 @@ class TodoList
     todos.fetch(idx).done!
   end
 
+  def mark_undone_at(idx)
+    todos.fetch(idx).undone!
+  end
+
   private
   attr_reader :todos
   alias << add
@@ -144,9 +148,9 @@ list
 # list.mark_done_at(100)          # raises IndexError
 
 # mark_undone_at
-list.mark_undone_at             # raises ArgumentError
+# list.mark_undone_at             # raises ArgumentError
 list.mark_undone_at(1)          # marks the 2nd item as not done,
-list.mark_undone_at(100)        # raises IndexError
+# list.mark_undone_at(100)        # raises IndexError
 
 # done!
 list.done!                      # marks all items as done
