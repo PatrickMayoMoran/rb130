@@ -91,6 +91,18 @@ class TodoList
     todos.fetch(idx).undone!
   end
 
+  def done!
+    todos.each { |todo| todo.done! }
+  end
+
+  def shift
+    todos.shift
+  end
+
+  def pop
+    todos.pop
+  end
+
   private
   attr_reader :todos
   alias << add
