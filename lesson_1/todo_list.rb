@@ -109,6 +109,7 @@ class TodoList
   end
 
   def to_s
+    puts "--- #{title} ---"
     puts todos
   end
 
@@ -157,7 +158,7 @@ list.done?                     # returns true if all todos in the list are done,
 
 # item_at
 # list.item_at                    # raises ArgumentError
-puts list.item_at(1)                 # returns 2nd item in list (zero based index)
+list.item_at(1)                 # returns 2nd item in list (zero based index)
 # list.item_at(100)               # raises IndexError
 
 # ---- Marking items in the list -----
@@ -165,7 +166,6 @@ puts list.item_at(1)                 # returns 2nd item in list (zero based inde
 # mark_done_at
 # list.mark_done_at               # raises ArgumentError
 list.mark_done_at(1)            # marks the 2nd item as done
-list
 # list.mark_done_at(100)          # raises IndexError
 
 # mark_undone_at
@@ -179,14 +179,14 @@ list.done!                      # marks all items as done
 # ---- Deleting from the list -----
 
 # shift
-list.shift                      # removes and returns the first item in list
+# list.shift                      # removes and returns the first item in list
 
 # pop
-list.pop                        # removes and returns the last item in list
+# list.pop                        # removes and returns the last item in list
 
 # remove_at
 # list.remove_at                  # raises ArgumentError
-list.remove_at(1)               # removes and returns the 2nd item
+# list.remove_at(1)               # removes and returns the 2nd item
 # list.remove_at(100)             # raises IndexError
 
 # ---- Outputting the list -----
