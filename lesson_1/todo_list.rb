@@ -103,6 +103,15 @@ class TodoList
     todos.pop
   end
 
+  def remove_at(idx)
+    todos.fetch(idx)
+    todos.delete_at(idx)
+  end
+
+  def to_s
+    puts todos
+  end
+
   private
   attr_reader :todos
   alias << add
@@ -130,19 +139,19 @@ list.add(todo3)                 # adds todo3 to end of list, returns list
 # ---- Interrogating the list -----
 
 # size
-p list.size                       # returns 3
+list.size                       # returns 3
 
 # first
-puts list.first                      # returns todo1, which is the first item in the list
+list.first                      # returns todo1, which is the first item in the list
 
 # last
-puts list.last                       # returns todo3, which is the last item in the list
+list.last                       # returns todo3, which is the last item in the list
 
 #to_a
-p list.to_a                      # returns an array of all items in the list
+list.to_a                      # returns an array of all items in the list
 
 #done?
-p list.done?                     # returns true if all todos in the list are done, otherwise false
+list.done?                     # returns true if all todos in the list are done, otherwise false
 
 # ---- Retrieving an item in the list ----
 
@@ -176,9 +185,9 @@ list.shift                      # removes and returns the first item in list
 list.pop                        # removes and returns the last item in list
 
 # remove_at
-list.remove_at                  # raises ArgumentError
+# list.remove_at                  # raises ArgumentError
 list.remove_at(1)               # removes and returns the 2nd item
-list.remove_at(100)             # raises IndexError
+# list.remove_at(100)             # raises IndexError
 
 # ---- Outputting the list -----
 
