@@ -109,8 +109,20 @@ class TodoList
   end
 
   def to_s
-    puts "--- #{title} ---"
-    puts todos
+    text =  "--- #{title} ---\n"
+    text << todos.map(&:to_s).join("\n")
+    text
+  end
+
+  def each
+    counter = 0
+    while counter < todos.size
+      todo = todos[counter]
+      yield(todo)
+      counter += 1
+    end
+
+    self
   end
 
   private
