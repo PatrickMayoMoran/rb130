@@ -125,6 +125,14 @@ class TodoList
     self
   end
 
+  def select
+    selected = []
+    self.each do |todo|
+      selected << todo if yield(todo)
+    end
+    selected
+  end
+
   private
   attr_reader :todos
   alias_method :<<, :add
