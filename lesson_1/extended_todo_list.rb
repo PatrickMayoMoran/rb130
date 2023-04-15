@@ -138,7 +138,7 @@ class TodoList
   end
 
   def all_done
-    raise NotImplementedError
+    select { |t| t.done? }
   end
 
   def all_not_done
