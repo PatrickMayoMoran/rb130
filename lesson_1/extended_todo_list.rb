@@ -141,8 +141,8 @@ class TodoList
     select { |t| t.done? }
   end
 
-  def all_not_done
-    raise NotImplementedError
+  def all_undone
+    select { |t| !t.done? }
   end
 
   def mark_done(str)
