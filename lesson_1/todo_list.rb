@@ -109,8 +109,9 @@ class TodoList
   end
 
   def to_s
-    puts "--- #{title} ---"
-    puts todos
+    text = "--- #{title} ---\n"
+    text << todos.map(&:to_s).join("\n")
+    text
   end
 
   private
