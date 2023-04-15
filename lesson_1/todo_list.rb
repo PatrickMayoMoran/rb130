@@ -84,11 +84,11 @@ class TodoList
   end
 
   def mark_done_at(idx)
-    todos.fetch(idx).done!
+    item_at(idx).done!
   end
 
   def mark_undone_at(idx)
-    todos.fetch(idx).undone!
+    item_at(idx).undone!
   end
 
   def done!
