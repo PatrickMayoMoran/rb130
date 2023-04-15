@@ -154,7 +154,7 @@ class TodoList
   end
 
   def mark_all_undone
-    raise NotImplementedError
+    each { |t| t.undone! }
   end
 
   private
