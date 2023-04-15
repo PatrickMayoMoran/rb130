@@ -146,7 +146,7 @@ class TodoList
   end
 
   def mark_done(str)
-    raise NotImplementedError
+    each { |t| t.done! if t.title == str }
   end
 
   def mark_all_done
@@ -173,6 +173,8 @@ list.add(todo2)
 list.add(todo3)
 
 list.mark_done_at(1)
+puts "Original list:"
+p list
 
 p list.find_by_title("Go to gym")
 p list.all_done
