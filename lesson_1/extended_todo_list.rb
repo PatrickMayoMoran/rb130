@@ -134,7 +134,7 @@ class TodoList
   end
 
   def find_by_title(title)
-    raise NotImplementedError
+    select { |t| t.title == title }
   end
 
   def all_done
