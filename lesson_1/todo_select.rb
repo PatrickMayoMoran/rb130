@@ -126,7 +126,7 @@ class TodoList
   end
 
   def select
-    selected = []
+    selected = TodoList.new(title)
     self.each do |todo|
       selected << todo if yield(todo)
     end
