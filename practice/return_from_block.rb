@@ -3,8 +3,9 @@ def return_block
   return "returned from method"
 end
 
-puts (return_block { return "returned from block!" })
+puts return_block { return "returned from block!" }
 
+=begin
 def return_proc
   a = Proc.new { return "returned from Proc!" }
   a.call
@@ -12,3 +13,4 @@ def return_proc
 end
 
 p return_proc
+=end
