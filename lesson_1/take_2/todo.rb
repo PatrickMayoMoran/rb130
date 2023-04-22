@@ -102,6 +102,10 @@ class TodoList
     todos.shift
   end
 
+  def pop
+    todos.pop
+  end
+
   private
 
   attr_reader :todos
