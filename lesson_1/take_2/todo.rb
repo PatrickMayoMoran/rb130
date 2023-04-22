@@ -131,6 +131,7 @@ class TodoList
   end
 
   def find_by_title(str)
+    select { |t| t.title == str }.first
   end
 
   def all_done
