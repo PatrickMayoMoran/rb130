@@ -53,7 +53,11 @@ class TodoList
 
   # rest of class needs implementation
   def add(item)
-    todos << item if item.instance_of? Todo
+    if item.instance_of? Todo
+      todos << item 
+    else
+      raise TypeError, "Can only add Todo objects"
+    end
   end
 
   private
