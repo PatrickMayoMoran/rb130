@@ -150,6 +150,7 @@ class TodoList
   end
 
   def mark_all_undone
+    each { |t| t.undone! }
   end
 
   private
