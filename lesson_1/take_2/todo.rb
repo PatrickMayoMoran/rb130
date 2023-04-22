@@ -203,7 +203,7 @@ list.remove_at(1)               # removes and returns the 2nd item
 # ---- Outputting the list -----
 
 # to_s
-puts list.to_s                      # returns string representation of the list
+# puts list.to_s                      # returns string representation of the list
 
 # ---- Today's Todos ----
 # [ ] Buy milk
@@ -216,6 +216,7 @@ puts list.to_s                      # returns string representation of the list
 # [ ] Buy milk
 # [X] Clean room
 # [ ] Go to gym
+
 todo1 = Todo.new("Buy milk")
 todo2 = Todo.new("Clean room")
 todo3 = Todo.new("Go to gym")
@@ -225,6 +226,8 @@ list.add(todo1)
 list.add(todo2)
 list.add(todo3)
 
-list.each do |todo|
-  puts todo                   # calls Todo#to_s
-end
+todo1.done!
+
+results = list.select { |todo| todo.done? }    # you need to implement this method
+
+puts results.inspect
