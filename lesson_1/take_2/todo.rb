@@ -172,10 +172,10 @@ list.done!                      # marks all items as done
 # ---- Deleting from the list -----
 
 # shift
-list.shift                      # removes and returns the first item in list
+# list.shift                      # removes and returns the first item in list
 
 # pop
-list.pop                        # removes and returns the last item in list
+# list.pop                        # removes and returns the last item in list
 
 # remove_at
 list.remove_at                  # raises ArgumentError
