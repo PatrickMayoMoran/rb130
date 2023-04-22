@@ -118,12 +118,9 @@ class TodoList
   end
 
   def each
-    counter = 0
-    until counter >= todos.size
-      yield item_at(counter)
-      counter += 1
+    todos.each do |t|
+      yield t
     end
-
     self
   end
 
