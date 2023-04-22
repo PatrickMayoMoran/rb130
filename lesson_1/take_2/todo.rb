@@ -110,6 +110,12 @@ class TodoList
     todos.delete(item_at(i))
   end
 
+  def to_s
+    text = "---- #{title} ----\n"
+    todos.each { |t| text << t.to_s + "\n" }
+    text
+  end
+
   private
 
   attr_reader :todos
@@ -189,7 +195,7 @@ list.remove_at(1)               # removes and returns the 2nd item
 # ---- Outputting the list -----
 
 # to_s
-list.to_s                      # returns string representation of the list
+puts list.to_s                      # returns string representation of the list
 
 # ---- Today's Todos ----
 # [ ] Buy milk
