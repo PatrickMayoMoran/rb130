@@ -98,6 +98,10 @@ class TodoList
     todos.each { |t| t.done! }
   end
 
+  def shift
+    todos.shift
+  end
+
   private
 
   attr_reader :todos
