@@ -135,12 +135,14 @@ class TodoList
   end
 
   def all_done
+    select { |t| t.done? }
   end
 
   def all_not_done
   end
 
   def mark_done(str)
+    each { |t| t.done! }
   end
 
   def mark_all_done
