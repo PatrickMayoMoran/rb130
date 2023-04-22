@@ -95,7 +95,7 @@ class TodoList
   end
 
   def done!
-    todos.each { |t| t.done! }
+    todos.each_index { |i| mark_done_at(i) }
   end
 
   def shift
