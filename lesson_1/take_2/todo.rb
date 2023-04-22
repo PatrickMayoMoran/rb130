@@ -117,6 +117,16 @@ class TodoList
     text
   end
 
+  def each
+    counter = 0
+    until counter >= todos.size
+      yield item_at(counter)
+      counter += 1
+    end
+
+    self
+  end
+
   private
 
   attr_reader :todos
@@ -209,3 +219,15 @@ puts list.to_s                      # returns string representation of the list
 # [ ] Buy milk
 # [X] Clean room
 # [ ] Go to gym
+todo1 = Todo.new("Buy milk")
+todo2 = Todo.new("Clean room")
+todo3 = Todo.new("Go to gym")
+
+list = TodoList.new("Today's Todos")
+list.add(todo1)
+list.add(todo2)
+list.add(todo3)
+
+list.each do |todo|
+  puts todo                   # calls Todo#to_s
+end
