@@ -82,6 +82,10 @@ class TodoList
     todos.all? { |t| t.done? }
   end
 
+  def item_at(i)
+    todos.fetch(i)
+  end
+
   private
 
   attr_reader :todos
@@ -126,9 +130,9 @@ list.done?                     # returns true if all todos in the list are done,
 # ---- Retrieving an item in the list ----
 
 # item_at
-list.item_at                    # raises ArgumentError
+# list.item_at                    # raises ArgumentError
 list.item_at(1)                 # returns 2nd item in list (zero based index)
-list.item_at(100)               # raises IndexError
+# list.item_at(100)               # raises IndexError
 
 # ---- Marking items in the list -----
 
