@@ -60,7 +60,11 @@ class TodoList
     end
   end
 
-  alias << add
+  alias :<< :add
+
+  def size
+    todos.size
+  end
 
   private
 
@@ -89,7 +93,7 @@ list << (todo3)                 # adds todo3 to end of list, returns list
 # ---- Interrogating the list -----
 
 # size
-list.size                       # returns 3
+p list.size                       # returns 3
 
 # first
 list.first                      # returns todo1, which is the first item in the list
