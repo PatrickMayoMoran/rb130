@@ -94,6 +94,10 @@ class TodoList
     item_at(i).undone!
   end
 
+  def done!
+    todos.each { |t| t.done! }
+  end
+
   private
 
   attr_reader :todos
