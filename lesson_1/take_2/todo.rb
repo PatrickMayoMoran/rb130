@@ -130,6 +130,24 @@ class TodoList
     list
   end
 
+  def find_by_title(str)
+  end
+
+  def all_done
+  end
+
+  def all_not_done
+  end
+
+  def mark_done(str)
+  end
+
+  def mark_all_done
+  end
+
+  def mark_all_undone
+  end
+
   private
 
   attr_reader :todos
@@ -234,6 +252,9 @@ list.add(todo3)
 
 todo1.done!
 
-results = list.select { |todo| todo.done? }    # you need to implement this method
-
-puts results.inspect
+puts list.find_by_title("Clean room")
+puts list.all_done
+puts list.all_not_done
+puts list.mark_done("Clean room")
+puts list.mark_all_done
+puts list.mark_all_undone
