@@ -124,6 +124,12 @@ class TodoList
     self
   end
 
+  def select
+    list = TodoList.new(title)
+    each { |t| list << t if yield t }
+    list
+  end
+
   private
 
   attr_reader :todos
