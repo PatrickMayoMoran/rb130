@@ -112,7 +112,8 @@ class TodoList
 
   def to_s
     text = "---- #{title} ----\n"
-    todos.each { |t| text << t.to_s + "\n" }
+    # todos.each { |t| text << t.to_s + "\n" }
+    text << todos.map(&:to_s).join("\n")
     text
   end
 
