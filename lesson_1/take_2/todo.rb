@@ -52,6 +52,13 @@ class TodoList
   end
 
   # rest of class needs implementation
+  def add(item)
+    todos << item if item.instance_of? Todo
+  end
+
+  private
+
+  attr_reader :todos
 
 end
 
