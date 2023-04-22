@@ -106,6 +106,10 @@ class TodoList
     todos.pop
   end
 
+  def remove_at(i)
+    todos.delete(item_at(i))
+  end
+
   private
 
   attr_reader :todos
@@ -178,9 +182,9 @@ list.done!                      # marks all items as done
 # list.pop                        # removes and returns the last item in list
 
 # remove_at
-list.remove_at                  # raises ArgumentError
+# list.remove_at                  # raises ArgumentError
 list.remove_at(1)               # removes and returns the 2nd item
-list.remove_at(100)             # raises IndexError
+# list.remove_at(100)             # raises IndexError
 
 # ---- Outputting the list -----
 
