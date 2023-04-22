@@ -79,7 +79,7 @@ list = TodoList.new("Today's Todos")
 list.add(todo1)                 # adds todo1 to end of list, returns list
 list.add(todo2)                 # adds todo2 to end of list, returns list
 list.add(todo3)                 # adds todo3 to end of list, returns list
-list.add(1)                     # raises TypeError with message "Can only add Todo objects"
+# list.add(1)                     # raises TypeError with message "Can only add Todo objects"
 
 # <<
 # same behavior as add
