@@ -3,14 +3,14 @@ def return_block
   return "returned from method"
 end
 
-puts return_block { return "returned from block!" }
+# puts return_block { return "returned from block!" }
 
-=begin
-def return_proc
-  a = Proc.new { return "returned from Proc!" }
+
+def return_proc(a)
+  
   a.call
   "returned from method!"
 end
+a = Proc.new { return "returned from Proc!" }
+p return_proc(a)
 
-p return_proc
-=end
