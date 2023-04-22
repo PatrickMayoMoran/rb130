@@ -70,6 +70,10 @@ class TodoList
     todos.first
   end
 
+  def last
+    todos.last
+  end
+
   private
 
   attr_reader :todos
@@ -97,10 +101,10 @@ list << (todo3)                 # adds todo3 to end of list, returns list
 # ---- Interrogating the list -----
 
 # size
-p list.size                       # returns 3
+list.size                       # returns 3
 
 # first
-puts list.first                      # returns todo1, which is the first item in the list
+list.first                      # returns todo1, which is the first item in the list
 
 # last
 list.last                       # returns todo3, which is the last item in the list
