@@ -86,6 +86,10 @@ class TodoList
     todos.fetch(i)
   end
 
+  def mark_done_at(i)
+    item_at(i).done!
+  end
+
   private
 
   attr_reader :todos
@@ -137,9 +141,9 @@ list.item_at(1)                 # returns 2nd item in list (zero based index)
 # ---- Marking items in the list -----
 
 # mark_done_at
-list.mark_done_at               # raises ArgumentError
+# list.mark_done_at               # raises ArgumentError
 list.mark_done_at(1)            # marks the 2nd item as done
-list.mark_done_at(100)          # raises IndexError
+# list.mark_done_at(100)          # raises IndexError
 
 # mark_undone_at
 list.mark_undone_at             # raises ArgumentError
