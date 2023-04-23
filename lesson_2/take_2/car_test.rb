@@ -18,6 +18,12 @@ class CarTest < Minitest::Test
     assert_nil(car.name)
   end
 
+  def test_raise_initialize_with_arg
+    assert_raises(ArgumentError) do
+      car = Car.new(name: "Joey")
+    end
+  end
+
   def test_bad_wheels
     skip("You skipped me!")
     car = Car.new
