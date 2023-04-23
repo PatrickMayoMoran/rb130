@@ -8,6 +8,11 @@ class CarTest < Minitest::Test
     assert_equal(4, car.wheels)
   end
 
+  def test_car_exists
+    car = Car.new
+    assert(car)
+  end
+
   def test_bad_wheels
     skip("You skipped me!")
     car = Car.new
