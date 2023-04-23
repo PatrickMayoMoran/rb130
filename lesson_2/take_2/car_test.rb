@@ -24,6 +24,11 @@ class CarTest < Minitest::Test
     end
   end
 
+  def test_instance_of_car
+    car = Car.new
+    assert_instance_of(Car, car)
+  end
+
   def test_bad_wheels
     skip("You skipped me!")
     car = Car.new
