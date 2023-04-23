@@ -29,6 +29,14 @@ class CarTest < Minitest::Test
     assert_instance_of(Car, car)
   end
 
+  def test_includes
+    car = Car.new
+    arr = [1, 2, 3]
+    arr << car
+
+    assert_includes(arr, car)
+  end
+
   def test_bad_wheels
     skip("You skipped me!")
     car = Car.new
