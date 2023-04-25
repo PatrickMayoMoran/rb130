@@ -1,6 +1,7 @@
 require 'minitest/autorun'
-
 require_relative 'todolist'
+require 'simplecov'
+SimpleCov.start
 
 class TodoListTest < MiniTest::Test
 
