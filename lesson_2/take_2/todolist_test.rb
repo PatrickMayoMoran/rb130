@@ -24,4 +24,8 @@ class TodoListTest < MiniTest::Test
     assert_equal(3, @list.size)
   end
 
+  def test_first
+    assert_equal(@todo1, @list.first)
+  end
+
 end
