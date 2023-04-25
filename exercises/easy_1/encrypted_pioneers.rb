@@ -1,4 +1,35 @@
+def upper?(char)
+  char.upcase == char
+end
+
+def adjust_char(char, base)
+  remainder = (char.ord + 13) % base
+  remainder -= 26 if remainder > 25
+  (remainder + base).chr
+end
+
+def adjust_word(word)
+  lower_base = 97
+  upper_base = 65
+
+  word.chars.map do |c|
+    if c.match(/[a-zA-Z]/)
+      if upper?(c)
+        adjust_char(c, upper_base)
+      else
+        adjust_char(c, lower_base)
+      end
+    else
+      c
+    end
+  end.join
+end
+
 def rot_13(str)
+  words = str.split
+  words.map do |word|
+    adjust_word(word)
+  end.join(' ')
 end
 
 p rot_13 'Nqn Ybirynpr'
