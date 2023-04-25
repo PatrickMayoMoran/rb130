@@ -88,4 +88,9 @@ class TodoListTest < MiniTest::Test
     assert_equal(true, @todo2.done?)
   end
 
+  def test_done!
+    @list.done!
+    assert_equal(true, @todos.all? { |t| t.done? })
+  end
+
 end
