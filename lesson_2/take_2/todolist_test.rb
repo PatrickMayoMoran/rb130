@@ -48,4 +48,10 @@ class TodoListTest < MiniTest::Test
     assert_equal(false, @list.done?)
   end
 
+  def test_TypeError_add
+    assert_raises(TypeError) { @list.add(5) }
+    assert_raises(TypeError) { @list.add(true) }
+    assert_raises(TypeError) { @list.add("hi") }
+  end
+
 end
