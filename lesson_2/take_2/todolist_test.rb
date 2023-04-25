@@ -20,4 +20,8 @@ class TodoListTest < MiniTest::Test
     assert_equal(@todos, @list.to_a)
   end
 
+  def test_size
+    assert_equal(@todos.size, @list.size)
+  end
+
 end
