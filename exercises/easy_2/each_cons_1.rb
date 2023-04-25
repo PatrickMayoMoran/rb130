@@ -1,12 +1,19 @@
+# OPTION 1 - Explicit indices
+# def each_cons(arr)
+#   return nil if arr.size <= 1
+#   i1 = 0
+#   i2 = 1
+#   while i2 < arr.size
+#     yield(arr[i1], arr[i2])
+#     i1 += 1
+#     i2 += 1
+#   end
+#   nil
+# end
+#
+# OPTION 2 - each_with_index, single check
 def each_cons(arr)
-  return nil if arr.size <= 1
-  i1 = 0
-  i2 = 1
-  while i2 < arr.size
-    yield(arr[i1], arr[i2])
-    i1 += 1
-    i2 += 1
-  end
+  arr.each_with_index { |e, i| yield(e, arr[i+1]) if i < (arr.size - 1) }
   nil
 end
 
