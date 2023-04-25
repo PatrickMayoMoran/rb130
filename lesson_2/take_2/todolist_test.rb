@@ -54,4 +54,9 @@ class TodoListTest < MiniTest::Test
     assert_raises(TypeError) { @list.add("hi") }
   end
 
+  def test_shovel
+    @list << @todo1
+    assert_equal([@todo1, @todo2, @todo3, @todo1], @list.to_a)
+  end
+
 end
