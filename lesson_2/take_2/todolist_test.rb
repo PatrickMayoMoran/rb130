@@ -55,8 +55,10 @@ class TodoListTest < MiniTest::Test
   end
 
   def test_shovel
-    @list << @todo1
-    assert_equal([@todo1, @todo2, @todo3, @todo1], @list.to_a)
+    todo = Todo.new("Walk the Dog")
+    @todos << todo
+    @list << todo
+    assert_equal(@todos, @list.to_a)
   end
 
 end
