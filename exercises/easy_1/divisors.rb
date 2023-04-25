@@ -1,7 +1,7 @@
 def divisors(num)
   divisors = []
-  (1..num).each { |n| divisors << n if num % n == 0 }
-  divisors
+  (1..(num/2)).each { |n| divisors << n if num % n == 0 }
+  divisors << num if !divisors.include? num
 end
 
 p divisors(1) == [1]
