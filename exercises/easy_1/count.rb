@@ -1,8 +1,22 @@
+# OPTION 1 - with each
+# def count(array)
+#   count = 0
+# 
+#   array.each do |el|
+#     count += 1 if yield(el)
+#   end
+# 
+#   count
+# end
+#
+# OPTION 2 - no each
 def count(array)
+  iterator = 0
   count = 0
 
-  array.each do |el|
-    count += 1 if yield(el)
+  while iterator < array.size
+    count += 1 if yield(array[iterator])
+    iterator += 1
   end
 
   count
