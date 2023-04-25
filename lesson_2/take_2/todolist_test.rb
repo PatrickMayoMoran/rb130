@@ -136,7 +136,10 @@ class TodoListTest < MiniTest::Test
     assert_equal(output, @list.to_s)
   end
 
-
-
+  def test_each_iteration
+    iterations = 0
+    @list.each { |_| iterations += 1 }
+    assert_equal(3, iterations)
+  end
 
 end
