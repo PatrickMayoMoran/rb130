@@ -146,4 +146,11 @@ class TodoListTest < MiniTest::Test
     assert_equal(@list, @list.each {})
   end
 
+  def test_select
+    list2 = TodoList.new("Today's Todos")
+    list2 << @todo2
+    selected = @list.select { |t| t.title == "Clean room" }
+    assert_equal(list2.to_a, selected.to_a)
+  end
+
 end
