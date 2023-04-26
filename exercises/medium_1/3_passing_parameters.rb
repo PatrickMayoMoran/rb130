@@ -6,10 +6,10 @@ def gather(items)
   puts "We've finished gathering!"
 end
 
-# Situation 1
-gather(items) do | , |
-  puts
-  puts
+puts "# Situation 1"
+gather(items) do |*ac, w|
+  puts ac.join(', ')
+  puts w
 end
 
 =begin
@@ -19,11 +19,11 @@ wheat
 We've finished gathering!
 =end
 
-# Situation 2
-gather(items) do | , , |
-  puts
-  puts
-  puts
+puts "# Situation 2"
+gather(items) do |a, *cc, w|
+  puts a
+  puts cc.join(', ')
+  puts w
 end
 
 =begin
@@ -34,10 +34,10 @@ wheat
 We've finished gathering!
 =end
 
-# Situation 3
-gather(items) do | , |
-  puts
-  puts
+puts "# Situation 3"
+gather(items) do |a, *ccw|
+  puts a
+  puts ccw.join(', ')
 end
 
 =begin
@@ -47,9 +47,9 @@ corn, cabbage, wheat
 We've finished gathering!
 =end
 
-# Situation 4
-gather(items) do | , , , |
-  puts
+puts "# Situation 4"
+gather(items) do |a, corn, cab, w|
+  puts "#{a}, #{corn}, #{cab}, and #{w}"
 end
 
 =begin
