@@ -11,4 +11,9 @@ class Exercise < Minitest::Test
     value = 'BYZ'
     assert_equal('xyz', value.downcase, "Downcase won't save you!")
   end
+
+  def test_nil
+    value = nil
+    assert_nil(value)
+  end
 end
