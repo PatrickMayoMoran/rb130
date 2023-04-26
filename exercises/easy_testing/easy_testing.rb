@@ -51,4 +51,9 @@ class Exercise < Minitest::Test
     value = 5
     assert_kind_of(Numeric, value)
   end
+
+  def test_object_equality
+    list = []
+    assert_same(list, list.process)
+  end
 end
