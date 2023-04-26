@@ -21,4 +21,9 @@ class Exercise < Minitest::Test
     list = []
     assert_empty(list)
   end
+
+  def test_includes
+    list = ['xyz', 1, true, {}]
+    assert_includes(list, 'xyz')
+  end
 end
