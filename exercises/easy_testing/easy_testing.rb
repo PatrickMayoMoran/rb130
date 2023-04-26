@@ -16,4 +16,9 @@ class Exercise < Minitest::Test
     value = nil
     assert_nil(value)
   end
+
+  def test_empty
+    list = []
+    assert_empty(list)
+  end
 end
