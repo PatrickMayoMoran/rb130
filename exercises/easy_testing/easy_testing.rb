@@ -46,4 +46,9 @@ class Exercise < Minitest::Test
     value = 5
     assert_instance_of(Numeric, value)
   end
+
+  def test_type_inheritance
+    value = 5
+    assert_kind_of(Numeric, value)
+  end
 end
