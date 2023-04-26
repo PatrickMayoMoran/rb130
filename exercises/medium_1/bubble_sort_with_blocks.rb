@@ -3,10 +3,9 @@ def bubble_sort!(array)
     swapped = false
     1.upto(array.size - 1) do |i|
       if block_given?
-        if yield(array[i - 1], array[i])
-          array[i - 1], array[i] = array[i], array[i - 1]
-          swapped = true
-        end
+        next if yield(array[i - 1], array[i])
+        array[i - 1], array[i] = array[i], array[i - 1]
+        swapped = true
       else
         next if array[i - 1] <= array[i]
         array[i - 1], array[i] = array[i], array[i - 1]
