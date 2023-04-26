@@ -1,0 +1,10 @@
+Closures are a general computing concept that represent a chunk of code that can be passed around with its binding. Binding means a "memory" of local variables, constants, and methods that were in scope at the time of the closure's creation. All these things are carried around and can be referenced in the closure even if the closure is not executed until later.
+
+Methods defined after the creation of a closure in top scope in ruby can still be called. This is because the 'main' object was enclosed in the closure, so when a method is called ruby tries to call it on the 'self' enclosed in the closure. Since top-level methods are defined on the main object, the closure finds it even though the method wasn't defined at the time of enclosure - the important part is that 'self' was enclosed.
+
+Closures in Ruby are implemented as blocks, Procs, and Lambdas (Method objects
+too!). Blocks are not objects; rather they are part of the syntax of a method
+call. Procs and Lambdas are both objects of the Proc class and can be assigned
+to variables and passed around. Blocks and procs have lenient arity whereas
+Lambdas have strict arity. Blocks are called with yield, whereas Procs and
+Lambdas are called with Proc#call.
