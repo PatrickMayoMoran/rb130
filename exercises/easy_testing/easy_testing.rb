@@ -26,4 +26,8 @@ class Exercise < Minitest::Test
     list = ['xyz', 1, true, {}]
     assert_includes(list, 'xyz')
   end
+
+  def test_exception
+    assert_raises(NoExperienceError) { employee.hire }
+  end
 end
