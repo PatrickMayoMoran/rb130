@@ -1,12 +1,12 @@
 class TextAnalyzer
   def process
-    f = File.open('rb130_review.txt')
-    yield(f)
+    f = File.open('rb130_review.txt', 'r')
+    yield(f.read)
     f.close
   end
 end
 
 analyzer = TextAnalyzer.new
-analyzer.process { |f| puts "#{f} paragraphs" }
-analyzer.process { |f| puts "#{f} lines" }
-analyzer.process { |f| puts "#{f} words" }
+analyzer.process { |f| puts "#{f.split(/\n\n/).count} paragraphs" }
+analyzer.process { |f| puts "#{f.split(/\n/).count} lines" }
+analyzer.process { |f| puts "#{f.split(/ /).count} words" }
