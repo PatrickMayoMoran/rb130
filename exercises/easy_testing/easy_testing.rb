@@ -37,9 +37,13 @@ class Exercise < Minitest::Test
   end
 
   def test_exception
-
     employee = Employee.new
 
     assert_raises(NoExperienceError) { employee.hire }
+  end
+
+  def test_type_instance
+    value = 5
+    assert_instance_of(Numeric, value)
   end
 end
