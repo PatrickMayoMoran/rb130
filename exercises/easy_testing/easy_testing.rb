@@ -56,4 +56,9 @@ class Exercise < Minitest::Test
     list = []
     assert_same(list, list.process)
   end
+
+  def test_include_refutation
+    list = ['xyz', 1, 2, 3]
+    refute_includes(list, 'xyz')
+  end
 end
