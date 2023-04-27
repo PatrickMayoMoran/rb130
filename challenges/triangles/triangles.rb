@@ -31,9 +31,9 @@ class Triangle
 
   def valid_side?(side)
     if side > 0
-      raise ArgumentError
-    else
       true
+    else
+      raise ArgumentError
     end
   end
 
