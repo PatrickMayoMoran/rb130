@@ -1,11 +1,8 @@
-require 'pry'
-
 class Triangle
   def initialize(one, two, three)
     self.side1 = one if valid_side?(one)
     self.side2 = two if valid_side?(two)
     self.side3 = three if valid_side?(three)
-    binding.pry
     valid_triangle?(side1, side2, side3)
     self.all_sides = [side1, side2, side3]
   end
