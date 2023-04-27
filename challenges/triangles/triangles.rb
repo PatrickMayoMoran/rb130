@@ -3,6 +3,7 @@ class Triangle
     self.side1 = one if valid_side?(one)
     self.side2 = two if valid_side?(two)
     self.side3 = three if valid_side?(three)
+    valid_triangle?(side1, side2, side3)
     self.all_sides = [side1, side2, side3]
   end
 
@@ -16,7 +17,7 @@ class Triangle
 
   private
 
-  attr_accessor :side1, :side2, :side3
+  attr_accessor :side1, :side2, :side3, :all_sides
 
   def equal_sides
     equal_sides = 1
@@ -32,9 +33,9 @@ class Triangle
     raise ArgumentError unless side > 0
   end
 
-  def valid_triangle?
-    raise ArgumentError unless side1 + side2 > side3 &&
-    side2 + side3 > side1 &&
-    side1 + side3 > side2
+  def valid_triangle?(side1, side2, side3)
+    raise ArgumentError unless (side1 + side2 > side3) &&
+    (side2 + side3 > side1) &&
+    (side1 + side3 > side2)
   end
 end
