@@ -37,5 +37,6 @@ et varius mauris, at pharetra mi.
 
   def teardown
     @sample.close
+    puts "File has been closed: #{@sample.closed?}"
   end
 end
