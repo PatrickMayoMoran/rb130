@@ -21,9 +21,10 @@ class Triangle
 
   def equal_sides
     equal_sides = 1
-    all_sides.each_with_index do |side, i|
-      break if i > (all_sides.size - 2)
-      equal_sides += 1 if side == all_sides[i+1]
+    (0..1).each do |s1|
+      ((s1+1)..2).each do |s2|
+        equal_sides += 1 if all_sides[s1] == all_sides[s2]
+      end
     end
 
     equal_sides
