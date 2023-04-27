@@ -15,6 +15,11 @@ class TextTest < Minitest::Test
     @text_object = Text.new(lorum)
   end
 
+  def test_swap
+    @text_object.swap('a', 'e')
+    assert_equal( , @text_object.
+  end
+
   def teardown
   end
 end
