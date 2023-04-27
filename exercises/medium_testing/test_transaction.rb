@@ -8,8 +8,10 @@ class TransactionTest < Minitest::Test
   end
 
   def test_prompt_for_payment
-    input = StringIO.new("52\n")
-    @transaction.prompt_for_payment(input: input)
-    assert_equal(52, @transaction.amount_paid)
+    capture_io do
+      input = StringIO.new("52\n")
+      @transaction.prompt_for_payment(input: input)
+      assert_equal(52, @transaction.amount_paid)
+    end
   end
 end
