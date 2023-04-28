@@ -49,13 +49,14 @@ class RomanNumeral
   end
 
   def to_roman
-    return '' if number is 0
-    return self::MARKER * number if number is 1, 2, 3
-    return self::MARKER + self::FIVE_MARKER if number is 4
-    return self::FIVE_MARKER if number is 5
-    return self::FIVE_MARKER + self::MARKER * number % 5 if number is 6, 7, 8
-    return self::MARKER + self::TEN_MARKER if number is 9
-
+    case number
+    when 0      then ''
+    when (1..3) then self::MARKER * number
+    when 4      then self::MARKER + self::FIVE_MARKER
+    when 5      then self::FIVE_MARKER
+    when (6..8) then self::FIVE_MARKER + self::MARKER * number % 5
+    when 9      then self::MARKER + self::TEN_MARKER
+    end
   end
 
   private
