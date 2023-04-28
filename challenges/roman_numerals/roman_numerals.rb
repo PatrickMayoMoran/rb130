@@ -100,7 +100,7 @@ class RomanNumeral
     when (1..3) then marker * digit
     when 4      then marker + five_marker
     when 5      then five_marker
-    when (6..8) then five_marker + marker * digit % 5
+    when (6..8) then five_marker + marker * (digit % 5)
     when 9      then marker + ten_marker
     end
   end
