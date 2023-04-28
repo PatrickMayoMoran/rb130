@@ -20,6 +20,7 @@ class Triangle
   attr_accessor :side1, :side2, :side3, :all_sides
 
   def equal_sides
+    return 3 if (side1 == side2) && (side1 == side3)
   end
 
   def valid_side?(side)
