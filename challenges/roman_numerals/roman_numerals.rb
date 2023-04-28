@@ -59,7 +59,7 @@ class RomanNumeral
     digit, remainder = remainder.divmod(10)
     roman_numeral << tens(digit) unless digit == 0
 
-    roman_numeral << tens(remainder) unless remainder == 0
+    roman_numeral << ones(remainder) unless remainder == 0
 
     roman_numeral
   end
