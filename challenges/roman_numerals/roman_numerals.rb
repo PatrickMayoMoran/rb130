@@ -54,14 +54,6 @@ class RomanNumeral
   end
 
   def roman_digit
-    case number
-    when 0      then ''
-    when (1..3) then self::MARKER * number
-    when 4      then self::MARKER + self::FIVE_MARKER
-    when 5      then self::FIVE_MARKER
-    when (6..8) then self::FIVE_MARKER + self::MARKER * number % 5
-    when 9      then self::MARKER + self::TEN_MARKER
-    end
   end
 
   private
@@ -70,24 +62,50 @@ class RomanNumeral
     marker = 'I'
     five_marker = 'V'
     ten_marker = 'X'
+    case digit
+    when 0      then ''
+    when (1..3) then marker * digit
+    when 4      then marker + five_marker
+    when 5      then five_marker
+    when (6..8) then five_marker + marker * digit % 5
+    when 9      then marker + ten_marker
+    end
   end
 
   def tens
     marker = 'X'
     five_marker = 'L'
     ten_marker = 'C'
+    case digit
+    when 0      then ''
+    when (1..3) then marker * digit
+    when 4      then marker + five_marker
+    when 5      then five_marker
+    when (6..8) then five_marker + marker * digit % 5
+    when 9      then marker + ten_marker
+    end
   end
 
   def hundreds
     marker = 'C'
     five_marker = 'D'
     ten_marker = 'M'
+    case digit
+    when 0      then ''
+    when (1..3) then marker * digit
+    when 4      then marker + five_marker
+    when 5      then five_marker
+    when (6..8) then five_marker + marker * digit % 5
+    when 9      then marker + ten_marker
+    end
   end
 
   def thousands
     marker = 'M'
-    five_marker = ''
-    ten_marker = ''
+    case digit
+    when 0      then ''
+    when (1..3) then marker * digit
+    end
   end
 
   attr_accessor :number
