@@ -58,38 +58,35 @@ class RomanNumeral
 
   private
 
-  def ones
+  def ones(digit)
     marker = 'I'
     five_marker = 'V'
     ten_marker = 'X'
-    case digit
-    when 0      then ''
-    when (1..3) then marker * digit
-    when 4      then marker + five_marker
-    when 5      then five_marker
-    when (6..8) then five_marker + marker * digit % 5
-    when 9      then marker + ten_marker
-    end
+    convert_digit(digit, marker, five_marker, ten_marker)
   end
 
-  def tens
+  def tens(digit)
     marker = 'X'
     five_marker = 'L'
     ten_marker = 'C'
-    case digit
-    when 0      then ''
-    when (1..3) then marker * digit
-    when 4      then marker + five_marker
-    when 5      then five_marker
-    when (6..8) then five_marker + marker * digit % 5
-    when 9      then marker + ten_marker
-    end
+    convert_digit(digit, marker, five_marker, ten_marker)
   end
 
-  def hundreds
+  def hundreds(digit)
     marker = 'C'
     five_marker = 'D'
     ten_marker = 'M'
+    convert_digit(digit, marker, five_marker, ten_marker)
+  end
+
+  def thousands(digit)
+    marker = 'M'
+    five_marker = ''
+    ten_marker = ''
+    convert_digit(digit, marker, five_marker, ten_marker)
+  end
+
+  def convert_digit(digit, marker, five_marker, ten_marker)
     case digit
     when 0      then ''
     when (1..3) then marker * digit
@@ -97,14 +94,6 @@ class RomanNumeral
     when 5      then five_marker
     when (6..8) then five_marker + marker * digit % 5
     when 9      then marker + ten_marker
-    end
-  end
-
-  def thousands
-    marker = 'M'
-    case digit
-    when 0      then ''
-    when (1..3) then marker * digit
     end
   end
 
