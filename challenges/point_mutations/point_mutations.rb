@@ -4,6 +4,10 @@ class DNA
   end
 
   def hamming_distance(other_sequence)
+    differences = 0
+    shorter = [sequence, other_sequence].min_by { |s| s.size }
+    p shorter
+    differences
   end
 
   private
