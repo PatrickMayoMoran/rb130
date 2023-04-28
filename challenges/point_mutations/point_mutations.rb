@@ -5,12 +5,12 @@ class DNA
 
   def hamming_distance(other_sequence)
     differences = 0
-    sequences = [sequence, other_sequence].sort
-    shorter = sequences[0]
-    longer = sequences[1]
-    shorter.chars.each_with_index do |c, i|
-      differences += 1 unless c == longer[i]
+
+    sequence.chars.each_with_index do |c, i|
+      break if i >= other_sequence.size
+      differences += 1 unless c == other_sequence[i]
     end
+
     differences
   end
 
