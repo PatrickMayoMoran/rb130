@@ -64,9 +64,6 @@ class RomanNumeral
     roman_numeral
   end
 
-  def roman_digit
-  end
-
   private
 
   def ones(digit)
@@ -109,5 +106,4 @@ class RomanNumeral
   end
 
   attr_accessor :number
-
 end
