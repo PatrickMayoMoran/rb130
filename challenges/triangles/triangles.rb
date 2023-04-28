@@ -20,14 +20,6 @@ class Triangle
   attr_accessor :side1, :side2, :side3, :all_sides
 
   def equal_sides
-    equal_sides = 0
-    (0..1).each do |s1|
-      ((s1+1)..2).each do |s2|
-        equal_sides += 1 if all_sides[s1] == all_sides[s2]
-        puts "#{all_sides[s1]} == #{all_sides[s2]}? #{all_sides[s1] == all_sides[s2]}"
-      end
-    end
-    equal_sides
   end
 
   def valid_side?(side)
