@@ -21,6 +21,8 @@ class Triangle
 
   def equal_sides
     return 3 if (side1 == side2) && (side1 == side3)
+    return 0 if (side1 != side2) && (side2 != side3) && (side1 != side3)
+    2
   end
 
   def valid_side?(side)
