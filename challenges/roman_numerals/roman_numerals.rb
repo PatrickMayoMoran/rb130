@@ -49,8 +49,19 @@ class RomanNumeral
   end
 
   def to_roman
-    digits = number.digits
-    Single.new(digits.last).roman_digit
+    roman_numeral = ''
+    digit, remainder = number.divmod(1000)
+    roman_numeral << thousands(digit) unless digit == 0
+
+    digit, remainder = remainder.divmod(100)
+    roman_numeral << hundreds(digit) unless digit == 0
+
+    digit, remainder = remainder.divmod(10)
+    roman_numeral << tens(digit) unless digit == 0
+
+    roman_numeral << tens(remainder) unless remainder == 0
+
+    roman_numeral
   end
 
   def roman_digit
