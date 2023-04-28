@@ -49,6 +49,11 @@ class RomanNumeral
   end
 
   def to_roman
+    digits = number.digits
+    Single.new(digits.last).roman_digit
+  end
+
+  def roman_digit
     case number
     when 0      then ''
     when (1..3) then self::MARKER * number
@@ -62,6 +67,7 @@ class RomanNumeral
   private
 
   attr_accessor :number
+
 end
 
 class Single < RomanNumeral
