@@ -32,7 +32,7 @@ class Triangle
 
   def valid_triangle?(side1, side2, side3)
     raise ArgumentError unless (side1 + side2 > side3) &&
-    (side2 + side3 > side1) &&
-    (side1 + side3 > side2)
+                               (side2 + side3 > side1) &&
+                               (side1 + side3 > side2)
   end
 end
