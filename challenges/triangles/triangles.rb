@@ -26,11 +26,8 @@ class Triangle
   end
 
   def valid_side?(side)
-    if side > 0
-      true
-    else
-      raise ArgumentError
-    end
+    raise ArgumentError unless side > 0
+    true
   end
 
   def valid_triangle?(side1, side2, side3)
