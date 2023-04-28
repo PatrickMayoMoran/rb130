@@ -1,5 +1,4 @@
 class RomanNumeral
-
   def initialize(number)
     self.number = number
   end
