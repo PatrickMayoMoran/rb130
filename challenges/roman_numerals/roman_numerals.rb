@@ -65,17 +65,28 @@ class RomanNumeral
   end
 
   private
-
-  attr_accessor :number
-
-end
-
-class Single < RomanNumeral
+def single
   MARKER = 'I'
   FIVE_MARKER = 'V'
   TEN_MARKER = 'X'
 end
+  def tens
+  MARKER = 'I'
+  FIVE_MARKER = 'V'
+  TEN_MARKER = 'X'
+  end
+  def hundreds
+  MARKER = 'I'
+  FIVE_MARKER = 'V'
+  TEN_MARKER = 'X'
+  end
 
-class Ten < RomanNumeral; end
-class Hundred < RomanNumeral; end
-class Thousand < RomanNumeral; end
+  def thousands
+  MARKER = 'I'
+  FIVE_MARKER = 'V'
+  TEN_MARKER = 'X'
+  end
+
+  attr_accessor :number
+
+end
