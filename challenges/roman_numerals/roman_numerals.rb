@@ -34,15 +34,6 @@ CODE
 =end
 
 class RomanNumeral
-  NUMERALS = {
-    'I' => 1,
-    'V' => 5,
-    'X' => 10,
-    'L' => 50,
-    'C' => 100,
-    'D' => 500,
-    'M' => 1000
-  }
 
   def initialize(number)
     self.number = number
@@ -50,6 +41,7 @@ class RomanNumeral
 
   def to_roman
     roman_numeral = ''
+
     digit, remainder = number.divmod(1000)
     roman_numeral << thousands(digit) unless digit == 0
 
