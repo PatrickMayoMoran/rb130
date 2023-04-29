@@ -11,9 +11,9 @@ class Anagram
     matches = []
 
     array.each do |word|
-      word = word.downcase
-      next if word == anagram
-      matches << word if word.chars.sort == anagram.chars.sort
+      normalized = word.downcase
+      next if normalized == anagram.downcase
+      matches << word if normalized.chars.sort == anagram.downcase.chars.sort
     end
 
     matches
