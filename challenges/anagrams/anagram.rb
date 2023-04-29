@@ -10,13 +10,11 @@ class Anagram
   def match(array)
     matches = []
 
-    array.each do |word|
+    array.each_with_object(matches) do |word, matches|
       normalized = word.downcase
       next if normalized == anagram.downcase
       matches << word if normalized.chars.sort == anagram.downcase.chars.sort
     end
-
-    matches
   end
 
   private
