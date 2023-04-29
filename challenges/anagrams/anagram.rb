@@ -10,6 +10,12 @@ class Anagram
   def match(array)
     matches = []
 
+    array.each do |word|
+      word = word.downcase
+      next if word == anagram
+      matches << word if word.chars.sort == anagram.chars.sort
+    end
+
     matches
   end
 
