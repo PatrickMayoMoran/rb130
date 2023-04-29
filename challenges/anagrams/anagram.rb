@@ -1,10 +1,16 @@
 # same word is not an anagram
 # case doesn't matter
-# list of matching anagrams should be in alphabetical order
+# return empty list if no anagrams
 
 class Anagram
   def initialize(anagram)
     @anagram = anagram
+  end
+
+  def match(array)
+    matches = []
+
+    matches
   end
 
   private
