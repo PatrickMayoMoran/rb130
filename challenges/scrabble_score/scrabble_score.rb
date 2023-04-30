@@ -32,6 +32,16 @@ class Scrabble
     @word = word
   end
 
+  def self.score(word)
+    score = 0
+    return score unless letters_only?(word)
+
+    letters = word.chars
+    letters.each { |l| score += points(l) }
+
+    score
+  end
+
   def score
     score = 0
     return score unless letters_only?(word)
