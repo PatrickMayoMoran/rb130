@@ -33,13 +33,8 @@ class Scrabble
   end
 
   def self.score(word)
-    score = 0
-    return score unless letters_only?(word)
-
-    letters = word.chars
-    letters.each { |l| score += points(l) }
-
-    score
+    scrabble = self.new(word)
+    scrabble.score
   end
 
   def score
