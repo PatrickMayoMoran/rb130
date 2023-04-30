@@ -45,6 +45,7 @@ class Scrabble
   private
 
   def points(letter)
+    return 0 unless letter.match(/[a-zA-Z]/)
     letter = letter.downcase.to_sym
     POINT_VALUES[letter]
   end
