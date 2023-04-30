@@ -50,7 +50,7 @@ class Scrabble
   end
 
   def letters_only?(word)
-    !word.match(/[^a-zA-Z]/)
+    word.class == String && !word.match(/[^a-zA-Z\s]/)
   end
 
   attr_reader :word
