@@ -34,8 +34,9 @@ class Scrabble
 
   def score
     score = 0
-    letters = word.chars
+    return score unless letters_only?(word)
 
+    letters = word.chars
     letters.each { |l| score += points(l) }
 
     score
@@ -46,6 +47,10 @@ class Scrabble
   def points(letter)
     letter = letter.downcase.to_sym
     POINT_VALUES[letter]
+  end
+
+  def letters_only?(word)
+    !word.match(/[^a-zA-Z]/)
   end
 
   attr_reader :word
