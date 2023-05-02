@@ -15,6 +15,18 @@ class Clock
     time == other.time
   end
 
+  def +(other)
+    total = time + other
+    hours, minutes = total.divmod(60)
+    Clock.at(hours, minutes)
+  end
+
+  def -(other)
+    total = time - other
+    hours, minutes = total.divmod(60)
+    Clock.at(hours, minutes)
+  end
+
   def to_s
     sprintf('%02d:%02d', hours, minutes)
   end
