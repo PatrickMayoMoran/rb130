@@ -20,11 +20,12 @@
 class Diamond
   def self.make_diamond(letter)
     letter_number = get_alphabet_index(letter)
+    
   end
 
   private
 
   def self.get_alphabet_index(letter)
-    letter.ord - 65
+    letter.ord - 64
   end
 end
