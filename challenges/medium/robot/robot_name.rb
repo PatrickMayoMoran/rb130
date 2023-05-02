@@ -8,19 +8,31 @@ class Robot
 
   def initialize
     @name = generate_name
+    @@all_names << name
   end
 
   def generate_name
     name = generate_letters + generate_numbers
+    while taken?(name)
+      name = generate_letters + generate_numbers
+    end
+
+    name
+  end
+
+  def taken?(name)
+    @@all_names.include?(name)
   end
 
   def reset
     old_name = name
+    @@all_names.delete(old_name)
     new_name = generate_name
-    while new_name == old_name
+    while new_name == old_name || taken?(new_name)
       new_name = generate_name
     end
 
+    @@all_names << new_name
     self.name = new_name
   end
 
