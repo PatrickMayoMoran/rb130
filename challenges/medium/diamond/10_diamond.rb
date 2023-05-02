@@ -19,21 +19,41 @@
 
 class Diamond
   def self.make_diamond(letter)
-    letter_number = get_alphabet_index(letter)
-    return "A\n" if letter_number == 1
+    range = ("A"..letter).to_a + ("A"...letter).to_a.reverse
+    diamond_width == max_width(letter)
 
-    longest_line = letter_number * 2 - 1
-    letters_needed = ("A"..letter).to_a
+    range.each_with_object([]) do |let, arr|
+      arr << make_row(let).center(diamond_width)
+    end.join("\n") + "\n"
 
   end
 
-  private
+  class << self
+    private
+    
+    def make_row(letter)
+      return "A" if letter == "A"
+      return "B B" if letter == "B"
 
-  def self.get_alphabet_index(letter)
-    letter.ord - 64
-  end
+      letter + determine_spaces(letter) + letter
+    end
 
-  def self.top_half
+    def determine_spaces(letter)
+      all_letters = ['B']
+      spaces = 1
 
+      until all_letters.include?(letter)
+        current_letter = all_letters.last
+        all_letters << current_letter.next
+        spaces += 2
+      end
+
+      ' ' * spaces
+    end
+
+    def max_width(letter)
+      return 1 if letter == 'A'
+      determine_spaces(letter).count(' ') + 2
+    end
   end
 end
