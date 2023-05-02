@@ -26,6 +26,10 @@ class Clock
 
   def -(other)
     total = time - other
+    if total.negative?
+      total = 1440 - total.abs
+    end
+    total = total % MINUTES_IN_DAY
     hours, minutes = total.divmod(60)
     Clock.at(hours, minutes)
   end
