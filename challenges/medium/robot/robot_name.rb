@@ -11,12 +11,22 @@ class Robot
   end
 
   def generate_name
-    old_name = name
-
     name = generate_letters + generate_numbers
   end
 
+  def reset
+    old_name = name
+    new_name = generate_name
+    while new_name == old_name
+      new_name = generate_name
+    end
+
+    self.name = new_name
+  end
+
   private
+
+  attr_writer :name
 
   def generate_letters
     letters = ''
