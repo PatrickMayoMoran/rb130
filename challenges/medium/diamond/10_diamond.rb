@@ -21,12 +21,19 @@ class Diamond
   def self.make_diamond(letter)
     letter_number = get_alphabet_index(letter)
     return "A\n" if letter_number == 1
+
     longest_line = letter_number * 2 - 1
+    letters_needed = ("A"..letter).to_a
+
   end
 
   private
 
   def self.get_alphabet_index(letter)
     letter.ord - 64
+  end
+
+  def self.top_half
+
   end
 end
