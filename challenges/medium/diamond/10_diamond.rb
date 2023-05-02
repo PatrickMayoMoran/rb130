@@ -20,7 +20,7 @@
 class Diamond
   def self.make_diamond(letter)
     letter_number = get_alphabet_index(letter)
-    
+    longest_line = letter_number * 2 - 1
   end
 
   private
