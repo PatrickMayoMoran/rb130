@@ -20,7 +20,7 @@
 class Diamond
   def self.make_diamond(letter)
     range = ("A"..letter).to_a + ("A"...letter).to_a.reverse
-    diamond_width == max_width(letter)
+    diamond_width = max_width(letter)
 
     range.each_with_object([]) do |let, arr|
       arr << make_row(let).center(diamond_width)
